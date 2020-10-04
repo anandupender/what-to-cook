@@ -11,31 +11,37 @@
 
     <div id="app">
         <nav>
-        <div class="cuisineSelector">
-            <div id="chinese" v-on:click="switchCuisine(chinese)">🇨🇳</div>
-            <div id="indian">🇮🇳</div>
+        <div id="cuisineSelector">
+            <div class="cuisineWrapper" id="chinese" v-on:click="switchCuisine('chinese')">
+                <div class="cuisineEmoji">🇨🇳</div>
+                <div class="cuisineText">[1] chinese</div>
+            </div>
+            <div class="cuisineWrapper" id="indian" v-on:click="switchCuisine('indian')">
+                <div class="cuisineEmoji">🇮🇳</div>
+                <div class="cuisineText">[2] indian</div>
+            </div>
         </div> 
         </nav>
 
         <div id="main">
-            
-            <div id="body">
-                <div id="fleshTypeLegend">
-                    <div>[m]eat</div>
-                    <div>[v]eggie</div>
-                    <div>[g]rain</div>
-                </div>
-                <div id="cards">
-                    <hooper :vertical="true" class="area">
-                        <slide v-for="element in flavors">
+            <div id="cards">
+                <div class="cardWrapper">
+                    <hooper :vertical="true" :infiniteScroll="true" class="area card">
+                        <slide v-for="element in flavorList">
                             {{element}}
                         </slide>
                         <hooper-navigation slot="hooper-addons"></hooper-navigation>
 
                     </hooper>
-
-                    <hooper :vertical="true" class="area">
-                        <slide v-for="element in fleshType">
+                </div>
+                <div class="cardWrapper">
+                    <div id="fleshTypeLegend">
+                        <div v-on:click="switchFlesh('meat')" class="selected" id="meat">[m]eat</div>
+                        <div v-on:click="switchFlesh('veggie')" id="veggie">[v]eggie</div>
+                        <div v-on:click="switchFlesh('grain')" id="grain">[g]rain</div>
+                    </div>
+                    <hooper :vertical="true" class="area card" id="fleshTypeCard">
+                        <slide v-for="element in fleshList">
                             {{element}}
                         </slide>
                         <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -44,7 +50,6 @@
                 </div>
             </div>  
             <button id="submit" v-on:click="submit()" class="area">Let's Cook!</button>
-
         </div>
     </div>
 

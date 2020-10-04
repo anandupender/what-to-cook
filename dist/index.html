@@ -9,25 +9,42 @@
 </head>
 <body>
 
-    <nav>
-       🇨🇳 
-    </nav>
+    <div id="app">
+        <nav>
+        <div class="cuisineSelector">
+            <div id="chinese" v-on:click="switchCuisine(chinese)">🇨🇳</div>
+            <div id="indian">🇮🇳</div>
+        </div> 
+        </nav>
 
-    <div id="main">
-        <div id="selectorContainer">
-            <hooper :vertical="true" :itemsToShow="2.5" :centerMode="true">
-                <slide v-for="element in flavors">
-                    {{element}}
-                </slide>
-                <hooper-navigation slot="hooper-addons"></hooper-navigation>
+        <div id="main">
+            
+            <div id="body">
+                <div id="fleshTypeLegend">
+                    <div>[m]eat</div>
+                    <div>[v]eggie</div>
+                    <div>[g]rain</div>
+                </div>
+                <div id="cards">
+                    <hooper :vertical="true" class="area">
+                        <slide v-for="element in flavors">
+                            {{element}}
+                        </slide>
+                        <hooper-navigation slot="hooper-addons"></hooper-navigation>
 
-            </hooper>
+                    </hooper>
 
-            <hooper :vertical="true" :itemsToShow="1.5" :centerMode="true">
-                <slide v-for="element in proteins">
-                    {{element}}
-                </slide>
-            </hooper>
+                    <hooper :vertical="true" class="area">
+                        <slide v-for="element in fleshType">
+                            {{element}}
+                        </slide>
+                        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+
+                    </hooper>
+                </div>
+            </div>  
+            <button id="submit" v-on:click="submit()" class="area">Let's Cook!</button>
+
         </div>
     </div>
 

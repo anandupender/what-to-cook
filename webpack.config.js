@@ -9,7 +9,8 @@ module.exports = {
       alias: {
          vue: 'vue/dist/vue.js'
       }
-    }
+    },
+    watch:true
 
     // resolve: {
     //     alias: {

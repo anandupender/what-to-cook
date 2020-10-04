@@ -1,9 +1,44 @@
 html, body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-y: hidden;
 }
 
-#selectorContainer {
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cuisineSelector {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.cuisineSelector div {
+  margin-left: 20px;
+  font-size: 24px;
+  opacity: 0.5;
+  filter: grayscale(0.3);
+}
+.cuisineSelector .selected {
+  opacity: 1;
+  filter: none;
+}
+.cuisineSelector div:hover {
+  opacity: 1;
+  filter: none;
+  cursor: pointer;
+}
+
+#fleshTypeLegend {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  width: 
+}
+
+#cards {
   display: flex;
   flex-direction: row;
 }
@@ -12,6 +47,15 @@ section {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 48px;
+}
+
+section:focus, button:focus {
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack -p",
-    "webpack": "webpack",
+    "build": "webpack webpack.prod.js",
+    "start": "webpack --open --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

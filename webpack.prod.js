@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'production',
     entry: './src/index.js',
     output: {
         filename: './main.js',
@@ -10,5 +11,5 @@ module.exports = {
          vue: 'vue/dist/vue.js'
       }
     },
-    watch:true
+    watch:false
 };

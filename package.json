@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack --open --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "start": "webpack --open --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.7.2"
   },
   "dependencies": {
     "hooper": "^0.3.4",

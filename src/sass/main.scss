@@ -23,7 +23,7 @@ html,body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px 0px 15px 0px;
+    margin: 20px 0px 15px 0px;
 }
 
 #nomspoTitle {
@@ -124,24 +124,21 @@ section {
 }
 
 #submit{
-    font-family: 'Ubuntu Mono', monospace;
-
-    &:focus{
-        border: $border-normal;
-
-    }
-}
-
-#submit{
+    font-family: $primaryFont;
     background-color: $green;
     color: $white;
     border-radius: 4px;
     line-height: 120%;
     outline:none;
     border:none;
-    margin: auto;
+    margin: auto 16px;
     padding: 20px;
     font-size: $mediumFontSize;
+
+    &:focus{
+        border: $border-normal;
+
+    }
 }
 
 ul{

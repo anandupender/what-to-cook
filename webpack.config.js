@@ -10,20 +10,5 @@ module.exports = {
          vue: 'vue/dist/vue.js'
       }
     },
-    watch:true
-
-    // resolve: {
-    //     alias: {
-    //         'vue$': 'vue/dist/vue.esm.js'
-    //     },
-    //     extensions: ['*', '.js', '.vue', '.json']
-    // },
-    // module: {
-    //     rules: [
-    //         {
-    //             test: /\.vue$/,
-    //             loader: 'vue-loader'
-    //         }
-    //     ]
-    // }
+    watch:false
 };

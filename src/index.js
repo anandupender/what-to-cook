@@ -16,7 +16,7 @@ var app = new Vue({
                 "pork",
                 "tofu",
                 "shrimp",
-                "lamb",      
+                "lamb",
             ],
             indian: [
                 "paneer",
@@ -24,7 +24,7 @@ var app = new Vue({
                 "chicken",
                 "shrimp",
             ]
-        },  
+        },
         veggie: {
             chinese: [
                 "bok choy",
@@ -57,12 +57,12 @@ var app = new Vue({
                 "lentils",
                 "thepla"
             ]
-        }, 
+        },
         flavors: {
             chinese: [
                 "soy sauce",
                 "ginger",
-                "garlic",    
+                "garlic",
                 "cumin",
                 "doubanjiang",
                 "chili",
@@ -77,9 +77,10 @@ var app = new Vue({
         fleshType: "meat",
         selectedArea:0,
         cuisine: "",
+        carouselIndex: 0,
     },
     computed: {
-        flavorList: function() { 
+        flavorList: function() {
             return this.flavors[this.cuisine];
         },
 
@@ -87,9 +88,9 @@ var app = new Vue({
             if (this.fleshType === "meat") {
                 return this.meat[this.cuisine];
             } else if (this.fleshType === "veggie") {
-                return this.veggie[this.cuisine];    
+                return this.veggie[this.cuisine];
             } else if (this.fleshType === "grain") {
-                return this.grain[this.cuisine]; 
+                return this.grain[this.cuisine];
             }
         }
     },
@@ -120,6 +121,7 @@ var app = new Vue({
             }
             this.cuisine = newCuisine
             document.getElementById(newCuisine).classList.add("selected");
+            this.
         },
         switchFlesh: function(newFlesh){
             var types = document.getElementById("fleshTypeLegend").children;
@@ -165,7 +167,7 @@ document.addEventListener('keyup', event => {
             app.switchFlesh("veggie");
             break;
         case "KeyG":
-            app.fleshType = "grain"; 
+            app.fleshType = "grain";
             app.switchFlesh("grain");
             break;
         case "ArrowLeft":

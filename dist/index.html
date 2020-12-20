@@ -13,14 +13,6 @@
 
     <div id="app">
         <nav>
-        <div id="nomspoHeader">
-            <div id="nomspoTitle">
-                nomspo.
-            </div>
-            <div id="nomspoDescription">
-                inspiration for your noms
-            </div>
-        </div>
         <div id="cuisineSelector">
             <div class="cuisineWrapper" id="chinese" v-on:click="switchCuisine('chinese')">
                 <div class="cuisineEmoji">🇨🇳</div>
@@ -33,36 +25,50 @@
         </div>
         </nav>
 
-        <div id="main">
-            <div id="cards">
-                <div class="cardWrapper">
-                    <hooper ref="flavorCarousel" @slide="updateFlavorCarousel" :vertical="true" :infiniteScroll="true" class="area card">
-                        <slide v-for="element in flavorList">
-                            {{element}}
-                        </slide>
-                        <hooper-navigation slot="hooper-addons"></hooper-navigation>
-
-                    </hooper>
+        <div>
+            <div id="nomspoHeader">
+                <div id="nomspoTitle">
+                    nomspo.
                 </div>
-                <div class="cardWrapper">
-                    <div id="fleshTypeLegend">
-                        <div v-on:click="switchFlesh('meat')" class="selected" id="meat">[m]eat</div>
-                        <div v-on:click="switchFlesh('veggie')" id="veggie">[v]eggie</div>
-                        <div v-on:click="switchFlesh('grain')" id="grain">[g]rain</div>
-                    </div>
-                    <hooper ref="fleshCarousel" @slide="updateFleshCarousel" :vertical="true" class="area card" id="fleshTypeCard">
-                        <slide v-for="element in fleshList">
-                            {{element}}
-                        </slide>
-                        <hooper-navigation slot="hooper-addons"></hooper-navigation>
-
-                    </hooper>
+                <div id="nomspoDescription">
+                    inspiration for your noms
                 </div>
             </div>
-            <button id="submit" v-on:click="submit()" class="area">let's cook!</button>
-        </div>
-        <div id="footerExplanation">
-            use arrow keys and letters to navigate
+
+            <div id="main">
+                <div id="cards">
+                    <div class="cardWrapper">
+                        <div class="typeLegend">
+                            <div class="selected">flavor</div>
+                        </div>
+                        <hooper ref="flavorCarousel" @slide="updateFlavorCarousel" :vertical="true" :infiniteScroll="true" class="area card">
+                            <slide v-for="element in flavorList">
+                                {{element}}
+                            </slide>
+                            <hooper-navigation slot="hooper-addons"></hooper-navigation>
+
+                        </hooper>
+                    </div>
+                    <div class="cardWrapper">
+                        <div class="typeLegend" id="fleshTypeLegend">
+                            <div v-on:click="switchFlesh('meat')" class="selected" id="meat">[m]eat</div>
+                            <div v-on:click="switchFlesh('veggie')" id="veggie">[v]eggie</div>
+                            <div v-on:click="switchFlesh('grain')" id="grain">[g]rain</div>
+                        </div>
+                        <hooper ref="fleshCarousel" @slide="updateFleshCarousel" :vertical="true" class="area card">
+                            <slide v-for="element in fleshList">
+                                {{element}}
+                            </slide>
+                            <hooper-navigation slot="hooper-addons"></hooper-navigation>
+
+                        </hooper>
+                    </div>
+                    <button id="submit" v-on:click="submit()" class="area">🍳 let's cook</button>
+                </div>
+            </div>
+            <div id="footerExplanation">
+                use arrow and letter keys to navigate
+            </div>
         </div>
     </div>
 

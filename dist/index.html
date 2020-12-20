@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Thingy</title>
+    <title>nomspo.</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/hooper.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div id="app">
         <nav>
+        <div id="nomspoHeader">
+            <div id="nomspoTitle">
+                nomspo.
+            </div>
+            <div id="nomspoDescription">
+                inspiration for your noms
+            </div>
+        </div>
         <div id="cuisineSelector">
             <div class="cuisineWrapper" id="chinese" v-on:click="switchCuisine('chinese')">
                 <div class="cuisineEmoji">🇨🇳</div>
@@ -49,7 +59,10 @@
                     </hooper>
                 </div>
             </div>
-            <button id="submit" v-on:click="submit()" class="area">Let's Cook!</button>
+            <button id="submit" v-on:click="submit()" class="area">let's cook!</button>
+        </div>
+        <div id="footerExplanation">
+            use arrow keys and letters to navigate
         </div>
     </div>
 

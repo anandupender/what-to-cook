@@ -1,7 +1,10 @@
 html,body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
     overflow-y: hidden;
+    height:100vh;
+    background-color:#F5D8B2;
+    font-family: 'Ubuntu Mono', monospace;
+
 }
 
 #app{
@@ -13,7 +16,23 @@ html,body{
     justify-content: center;
     width: 80vw;
     margin: auto;
-    max-width: 1040px; 
+    max-width: 1040px;
+}
+
+#nomspoHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0px 15px 0px;
+}
+
+#nomspoTitle {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+#nomspoDescription {
+    font-size: 20px;
 }
 
 #cuisineSelector{
@@ -28,17 +47,17 @@ html,body{
         margin-left: 20px;
         opacity: .5;
         filter: grayscale(.3);
-        
+
         &:hover{
             opacity: 1;
             filter: none;
             cursor: pointer;
         }
-    
+
         .cuisineText {
-            font-size: 16px; 
+            font-size: 16px;
         }
-        
+
         .cuisineEmoji {
             font-size: 20px;
         }
@@ -64,12 +83,12 @@ html,body{
 
 #fleshTypeLegend {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: space-between;
   }
-  
+
 #fleshTypeCard {
-    margin-top: 8px; 
+    margin-top: 8px;
 }
 
 #cards {
@@ -81,33 +100,53 @@ html,body{
 }
 
 .card {
-    font-size: 32px; 
+    font-size: 32px;
 }
 
 .cardWrapper {
-    margin: 0 16px; 
+    margin: 0 16px;
     width: 100%;
 }
 
 #selectorContainer {
     display: flex;
-    flex-direction: row; 
-} 
+    flex-direction: row;
+}
 
 section {
     &:focus {
-    border: 5px solid black;
+    // border: 5px solid black;
+    box-shadow: 0 0 36px rgba(0, 0, 0, 0.3)  ;
+	-webkit-box-shadow: 0 0 36px rgba(0, 0, 0, 0.3)  ;
+	-moz-box-shadow: 0 0 36px rgba(0, 0, 0, 0.3)  ;
     outline: none;
+        li{
+            font-weight:900;
+        }
     }
 }
 
 button{
+    font-family: 'Ubuntu Mono', monospace;
+
     &:focus{
         border: 5px solid black;
         outline:none;
     }
 }
 
+#submit{
+    background-color:#CBF5D6;
+    outline:none;
+    border:none;
+}
+
 ul{
     list-style-type:none;
+}
+
+#footerExplanation {
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
 }

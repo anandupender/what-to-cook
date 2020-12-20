@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Thingy</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/hooper.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/hooper.css">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
         <div id="main">
             <div id="cards">
                 <div class="cardWrapper">
-                    <hooper :vertical="true" :infiniteScroll="true" class="area card">
+                    <hooper ref="flavorCarousel" @slide="updateFlavorCarousel" :vertical="true" :infiniteScroll="true" class="area card">
                         <slide v-for="element in flavorList">
                             {{element}}
                         </slide>
@@ -40,7 +40,7 @@
                         <div v-on:click="switchFlesh('veggie')" id="veggie">[v]eggie</div>
                         <div v-on:click="switchFlesh('grain')" id="grain">[g]rain</div>
                     </div>
-                    <hooper :vertical="true" class="area card" id="fleshTypeCard">
+                    <hooper ref="fleshCarousel" @slide="updateFleshCarousel" :vertical="true" class="area card" id="fleshTypeCard">
                         <slide v-for="element in fleshList">
                             {{element}}
                         </slide>

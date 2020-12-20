@@ -77,7 +77,8 @@ var app = new Vue({
         fleshType: "meat",
         selectedArea:0,
         cuisine: "",
-        carouselIndex: 0,
+        flavorCarouselIndex: 0,
+        fleshCarouselIndex: 0,
     },
     computed: {
         flavorList: function() {
@@ -92,6 +93,14 @@ var app = new Vue({
             } else if (this.fleshType === "grain") {
                 return this.grain[this.cuisine];
             }
+        }
+    },
+    watch: {
+        flavorCarouselIndex() {
+            this.$refs.flavorCarousel.slideTo(this.flavorCarouselIndex);
+        },
+        fleshCarouselIndex() {
+            this.$refs.fleshCarousel.slideTo(this.fleshCarouselIndex);
         }
     },
     methods:{
@@ -114,6 +123,12 @@ var app = new Vue({
             var link = "https://www.google.com/search?q=" + query;
             window.open(link, '_blank');
         },
+        updateFlavorCarousel(payload) {
+            this.flavorCarouselIndex = payload.currentSlide;
+        },
+        updateFleshCarousel(payload) {
+            this.fleshCarouselIndex = payload.currentSlide;
+        },
         switchCuisine: function(newCuisine){
             var flags = document.getElementById("cuisineSelector").children;
             for(var i = 0;i< flags.length;i++){
@@ -121,7 +136,8 @@ var app = new Vue({
             }
             this.cuisine = newCuisine
             document.getElementById(newCuisine).classList.add("selected");
-            this.
+            this.flavorCarouselIndex = 0;
+            this.fleshCarouselIndex = 0;
         },
         switchFlesh: function(newFlesh){
             var types = document.getElementById("fleshTypeLegend").children;
@@ -130,6 +146,7 @@ var app = new Vue({
             }
             document.getElementById(newFlesh).classList.add("selected");
             this.fleshType = newFlesh;
+            this.fleshCarouselIndex = 0;
         }
     }
 })

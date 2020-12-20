@@ -30,6 +30,7 @@ html,body{
     font-size: $nomspoTitleFontSize;
     margin-bottom: 15px;
     font-weight:900;
+    color: #EF8C6D;
 }
 
 #nomspoDescription {
@@ -42,7 +43,7 @@ html,body{
     flex-direction: row;
     padding: 10px 20px 15px 20px;
     height: 100%;
-    background: $darkBrown;
+    background: $secondary;
 
     .cuisineWrapper {
         display: flex;
@@ -132,7 +133,7 @@ section {
 }
 
 #submit{
-    background-color: $teal;
+    background-color: $green;
     color: $white;
     border-radius: 4px;
     line-height: 120%;

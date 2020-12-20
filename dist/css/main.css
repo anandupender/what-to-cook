@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   overflow-y: hidden;
   height: 100vh;
-  background-color: #F5D8B2;
+  background-color: #EADEC6;
   font-family: "Ubuntu Mono", monospace;
   font-size: 16px;
   box-sizing: border-box;
@@ -25,9 +25,10 @@ html, body {
 }
 
 #nomspoTitle {
-  font-size: 40px;
+  font-size: 56px;
   margin-bottom: 15px;
   font-weight: 900;
+  color: #EF8C6D;
 }
 
 #nomspoDescription {
@@ -40,7 +41,7 @@ html, body {
   flex-direction: row;
   padding: 10px 20px 15px 20px;
   height: 100%;
-  background: #C6ACB8;
+  background: #EADEC6;
 }
 #cuisineSelector .cuisineWrapper {
   display: flex;
@@ -123,7 +124,7 @@ section:focus li {
 }
 
 #submit {
-  background-color: #29ACAD;
+  background-color: #93B46B;
   color: #f8f8f8;
   border-radius: 4px;
   line-height: 120%;

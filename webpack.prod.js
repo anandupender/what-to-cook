@@ -1,15 +1,6 @@
-const path = require('path');
+const { merge } = require('webpack-merge');
 
-module.exports = {
-  mode: 'production',
-    entry: './src/index.js',
-    output: {
-        filename: './main.js',
-    },
-    resolve: {
-      alias: {
-         vue: 'vue/dist/vue.js'
-      }
-    },
-    watch:false
-};
+module.exports = merge(common, {
+    mode: 'production',
+    watch: false
+});

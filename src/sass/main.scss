@@ -28,14 +28,14 @@ html,body{
 
 #nomspoTitle {
     font-size: $nomspoTitleFontSize;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-weight:900;
     color: #EF8C6D;
 }
 
 #nomspoDescription {
     font-size: $mediumFontSize;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 #cuisineSelector{
@@ -110,7 +110,7 @@ html,body{
 }
 
 section {
-    margin-top: 16px;
+    margin-top: 12px;
     border-radius: 5px;
     overflow: hidden;
 
@@ -146,7 +146,13 @@ ul{
 }
 
 #footerExplanation {
-    margin: 30px auto;
+    margin: 75px auto;
     width: 100%;
     text-align: center;
+    font-style: italic;
+
+    img{
+        width: 100px;
+        margin-bottom: 10px;
+    }
 }
